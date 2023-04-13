@@ -1,0 +1,38 @@
+.layout {
+  height: 100vh;
+  padding: 20px 50px;
+}
+
+.header {
+  height: 8%;
+  background-color: #000c40;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: white;
+  padding-top: 12px;
+}
+
+.content {
+  height: 87%;
+  border: 1px solid gray;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(128, 128, 128, 0.486);
+  padding: 20px;
+}
+
+.iconButton {
+  background-color: white !important;
+  color: black !important;
+  display: flex;
+  align-items: center;
+  font-size: 1.2 rem;
+}

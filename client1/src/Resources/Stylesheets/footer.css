@@ -1,0 +1,20 @@
+.footer {
+  width: 100%;
+  color: #000c40;
+  text-align: center;
+  padding-bottom: 32px;
+  font-size: 1.4rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.link {
+  color: #000c40;
+  text-decoration: underline;
+}
+
+.fa-github {
+  margin-top: 24px;
+}

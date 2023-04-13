@@ -1,0 +1,8 @@
+.updateProfile h4, label, h5, .ant-tabs-tab {
+    color: #000c40 !important;
+}
+
+.updateButton {
+    background-color: #000c40 !important;
+    color: white !important;
+}

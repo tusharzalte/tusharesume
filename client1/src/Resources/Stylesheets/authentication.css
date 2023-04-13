@@ -1,0 +1,55 @@
+.authenticationParent {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #000c40,
+    #f0f2f0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #000c40,
+    #f0f2f0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: absolute;
+  width: 100%;
+}
+
+.authenticationParent h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.authenticationParent form {
+  width: 400px;
+  box-shadow: 0 0 3px gray;
+  padding: 20px;
+  background-color: white !important;
+  z-index: 1;
+  padding: 60px 30px;
+  opacity: 0.85;
+}
+
+.brand {
+  font-size: 130px !important;
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  color: white;
+}
+
+.button {
+  background-color: #000c40 !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .brand {
+    display: none;
+  }
+}
