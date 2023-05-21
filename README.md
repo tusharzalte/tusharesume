@@ -13,6 +13,31 @@ https://user-images.githubusercontent.com/56690856/183486623-fa7e7b0f-a094-4716-
 - Backend : NodeJS and Express
 - Database : MongoDB
 
+# Getting Started🌟📰
+
+1. Fork the repository by clicking on the "Fork" button on the top right of the repository page. This will create a copy of the repository in your GitHub account.
+
+2. Clone the repository:
+
+   ```shell
+   git clone <repository-url>
+   ```
+
+3. Install dependencies:
+
+   ```shell
+   cd client
+   npm install
+   ```
+
+4. In the client1 folder, run command 
+
+   ```shell
+   npm start
+   ```
+
+Open your web browser and navigate to `http://localhost:3000` to access the tusharesume website.
+
 # How to use?
 - Register
 <img width="800px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/Screenshots/register.png">
