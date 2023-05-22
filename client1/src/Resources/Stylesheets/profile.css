@@ -3,6 +3,30 @@
 }
 
 .updateButton {
+  
+    background: transparent;
     background-color: #000c40 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
     color: white !important;
-}
+    border-radius: 2px;
+    padding: 10px 25px;
+   
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    height: 40px;
+  
+    outline: none;
+  }
+  
+  
+  .updateButton:hover {
+     background: rgb(0,3,255);
+  background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+  }
+  

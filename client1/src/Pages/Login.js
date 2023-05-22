@@ -44,10 +44,10 @@ function Register() {
           </Form.Item>
 
           <div className="d-flex align-items-center justify-content-between mt-4">
-            <Button className="button" type="primary" htmlType="submit">
+            <Button className="button custom-btn btn-1" type="primary" htmlType="submit">
               <Link to="/register">Register</Link>
             </Button>
-            <Button className="button" type="primary" htmlType="submit">
+            <Button className="button custom-btn btn-1" type="primary" htmlType="submit">
               Login
             </Button>
           </div>
