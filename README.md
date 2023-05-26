@@ -26,7 +26,7 @@ https://user-images.githubusercontent.com/56690856/183486623-fa7e7b0f-a094-4716-
 3. Install dependencies:
 
    ```shell
-   cd client
+   cd client1
    npm install
    ```
 
