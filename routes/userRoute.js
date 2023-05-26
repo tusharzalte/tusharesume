@@ -2,13 +2,18 @@ const express = require("express");
 const User = require("../models/userModel");
 const session = require("express-session");
 const randomstring = require("randomstring");
-const cors = require("cors")
+const cors = require("cors");
 const app = express.Router();
-app.use(cors());
 
+
+const secretKey = randomstring.generate({
+  length: 32, // You can adjust the length of the secret key as needed
+  charset: "alphanumeric",
+});
+app.use(cors());
 app.use(
   session({
-    secret: "6gsdgvgeggvfgevfg2356",
+    secret: secretKey,
     resave: false,
     saveUninitialized: true,
   })
