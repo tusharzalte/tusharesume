@@ -18,7 +18,7 @@ function SkillsEducation() {
     setSelectedUniversity(inputValue); // Update the selected university
     if (inputValue) {
       const filtered = universities.filter((university) =>
-        university.toLowerCase().includes(inputValue.toLowerCase())
+        university.toLowerCase().startsWith(inputValue.toLowerCase())
       );
       setFilteredUniversities(filtered);
     } else {
