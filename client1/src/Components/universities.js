@@ -90,7 +90,6 @@ const universities = [
     "University of Gaya",
     "University of Ghaziabad",
     "University of Gorakhpur",
-    "University of Gulbarga",
     "University of Guntur",
     "University of Gurgaon",
     "University of Guwahati",
@@ -409,7 +408,6 @@ const universities = [
   "Karnataka State Open University",
   "Karnataka State Women's University",
   "Karnataka University",
-  "Gulbarga University",
   "Karnataka Veterinary, Animal and Fisheries Sciences University",
   "Kuvempu University",
   "Mangalore University",
@@ -428,7 +426,6 @@ const universities = [
   "Karnataka State Open University",
   "Karnataka State Women's University",
   "Karnataka University",
-  "Gulbarga University",
   "Karnataka Veterinary, Animal and Fisheries Sciences University",
   "Kuvempu University",
   "Mangalore University",
@@ -553,7 +550,8 @@ const universities = [
   "Yashwantrao Chavan Maharashtra Open University",
   "Dr. Balasaheb Sawant Konkan"
 ]
-  
+
+
 
 
 

@@ -1,17 +1,17 @@
 import React from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, AutoComplete } from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import universities from "./universities";
-
-
-// Predefined list of universities
+import educational_qualifications from "./educational_qualifications";
 
 function SkillsEducation() {
-  // State to store the filtered universities
+  const [form] = Form.useForm();
   const [filteredUniversities, setFilteredUniversities] = useState([]);
-  // State to store the selected university
   const [selectedUniversity, setSelectedUniversity] = useState("");
+  const [filteredqualifications, setFilteredqualifications] = useState([]);
+  const [selectedqualifications, setSelectedqualifications] = useState("");
+
 
   // Handle input change for university filtering
   const handleUniversityFilter = (inputValue) => {
@@ -26,11 +26,31 @@ function SkillsEducation() {
     }
   };
 
+  const handlequaliFilter = (inputValue) => {
+    setSelectedqualifications(inputValue); // Update the selected university
+    if (inputValue) {
+      const fil = educational_qualifications.filter((qualification) =>
+        qualification.toLowerCase().startsWith(inputValue.toLowerCase())
+      );
+      setFilteredqualifications(fil);
+    } else {
+      setFilteredqualifications([]);
+    }
+  };
+
   // Handle university selection
   const handleUniversitySelect = (university) => {
     setSelectedUniversity(university);
     setFilteredUniversities([]);
+    form.setFieldsValue({ institution: university });
   };
+
+  const handlequaliSelect = (qual) => {
+    setSelectedqualifications(qual);
+    setFilteredqualifications([]);
+    form.setFieldsValue({ qualification: qual });
+  };
+
 
   return (
     <div>
@@ -44,17 +64,46 @@ function SkillsEducation() {
             <div className="row">
               {fields.map(({ key, name, ...restField }) => (
                 <>
-                  <div className="col-md-3">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "qualification"]}
-                      rules={[
-                        { required: true, message: "Missing qualification" },
-                      ]}
-                    >
-                      <Input placeholder="Qualification" />
-                    </Form.Item>
-                  </div>
+                 <div className="col-md-3">
+  <Form.Item
+    {...restField}
+    name={[name, "qualification"]}
+    rules={[
+      { required: true, message: "Missing qualification" },
+    ]}
+    
+  >
+    <AutoComplete
+      placeholder="Qualification"
+      onChange={handlequaliFilter}
+      value={selectedqualifications}
+      onBlur={() => {
+        if (!selectedqualifications) {
+          form.validateFields([`${name}.qualification`]);
+        }
+      }}
+     
+    >
+      {filteredqualifications.map((qualification) => (
+        <AutoComplete.Option
+          key={qualification}
+          value={qualification}
+          onMouseEnter={() => {
+            setSelectedqualifications(qualification);
+          }}
+          onMouseLeave={() => {
+            setSelectedqualifications("");
+          }}
+          onClick={() => {
+            handlequaliSelect(qualification);
+          }}
+        >
+          {qualification}
+        </AutoComplete.Option>
+      ))}
+    </AutoComplete>
+  </Form.Item>
+</div>
 
                   <div className="col-md-2">
                     <Form.Item
@@ -76,48 +125,34 @@ function SkillsEducation() {
                         { required: true, message: "Missing institution name" },
                       ]}
                     >
-                      <Input
+                      <AutoComplete
                         placeholder="Institution"
-                        onChange={(e) => handleUniversityFilter(e.target.value)}
+                        onChange={handleUniversityFilter}
                         value={selectedUniversity}
-                      />
-                      {filteredUniversities.length > 0 && (
-                        <ul
-                          style={{
-                            listStyle: "none",
-                            padding: 0,
-                            margin: 0,
-                            position: "absolute",
-                            backgroundColor: "#ffffff",
-                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                            borderRadius: "4px",
-                            zIndex: 999,
-                            maxHeight: "200px",
-                            overflowY: "auto",
-                            width: "100%",
-                          }}
-                        >
-                          {filteredUniversities.map((university) => (
-                            <li
-                              key={university}
-                              style={{
-                                padding: "8px 16px",
-                                cursor: "pointer",
-                                transition: "background-color 0.3s ease",
-                              }}
-                              onClick={() => handleUniversitySelect(university)}
-                              onMouseEnter={(e) =>
-                                (e.target.style.backgroundColor = "#e6f7ff")
-                              }
-                              onMouseLeave={(e) =>
-                                (e.target.style.backgroundColor = "transparent")
-                              }
-                            >
-                              {university}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                        onBlur={() => {
+                          if (!selectedUniversity) {
+                            form.validateFields([`${name}.institution`]);
+                          }
+                        }}
+                      >
+                        {filteredUniversities.map((university) => (
+                          <AutoComplete.Option
+                            key={university}
+                            value={university}
+                            onMouseEnter={() => {
+                              setSelectedUniversity(university);
+                            }}
+                            onMouseLeave={() => {
+                              setSelectedUniversity("");
+                            }}
+                            onClick={() => {
+                              handleUniversitySelect(university);
+                            }}
+                          >
+                            {university}
+                          </AutoComplete.Option>
+                        ))}
+                      </AutoComplete>
                     </Form.Item>
                   </div>
 
