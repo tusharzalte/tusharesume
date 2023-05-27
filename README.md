@@ -35,6 +35,10 @@ https://user-images.githubusercontent.com/56690856/183486623-fa7e7b0f-a094-4716-
    ```shell
    npm start
    ```
+5. To initialize the backend server, run command
+   ```shell
+   node server.js
+   ```
 
 Open your web browser and navigate to `http://localhost:3000` to access the tusharesume website.
 
