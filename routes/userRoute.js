@@ -3,9 +3,10 @@ const puppeteer = require('puppeteer');
 const User = require("../models/userModel");
 const session = require("express-session");
 const randomstring = require("randomstring");
+const bcypt = require('bcrypt');
 const cors = require("cors");
 const app = express.Router();
-
+const saltRounds = 10;
 
 const secretKey = randomstring.generate({
   length: 32, // You can adjust the length of the secret key as needed
@@ -53,12 +54,16 @@ app.post("/login", async (request, response) => {
   if (userInput === storedCaptcha) {
     try {
       const result = await User.findOne({
-        username: request.body.username,
-        password: request.body.password,
+        username: request.body.username
       });
 
       if (result) {
-        response.send(result);
+        const passwordDecode = await bcypt.compare(request.body.password, result.password);
+        if (passwordDecode) {
+          response.send(result);
+        } else {
+          response.status(400).json("Login failed");
+        }
       } else {
         response.status(400).json("Login failed");
       }
@@ -85,6 +90,9 @@ app.post("/register", async (request, response) => {
         response.status(400).json("Registration failed");
       } else {
         if (request.body.password === request.body.confirmPassword) {
+          const genSalt = await bcypt.genSalt(saltRounds);
+          const hashPassword = await bcypt.hash(request.body.password, genSalt);
+          request.body.password = hashPassword;
           const newUser = new User(request.body);
           await newUser.save();
 
