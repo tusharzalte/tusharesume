@@ -4,7 +4,7 @@ A resume is a formal document that a job applicant creates to itemize their qual
 
 Employers use resumes to make recruiting choices, and it can also help us secure interview after submitting a job application. Owing to this one must ensure that the resume is clean and has relevant content.
 
-Resume builder is a application used to create ATS(Applicant Tracking System) friendly resumes. This app helps to create resumes which has all the relevant information needed to get hired.
+Resume builder is a application used to create <b> ATS(Applicant Tracking System) </b> friendly resumes. This app helps to create resumes which has all the relevant information needed to get hired.
 
 https://user-images.githubusercontent.com/56690856/183486623-fa7e7b0f-a094-4716-b2d0-87c4b803cedb.mp4
 
@@ -44,41 +44,89 @@ https://user-images.githubusercontent.com/56690856/183486623-fa7e7b0f-a094-4716-
 
 Open your web browser and navigate to `http://localhost:3000` to access the tusharesume website.
 
-# How to use?
+# How to use it?
 
 <table>
 <tr>
 <th> - Register </th>
-<th> - Login </th>
 </tr>
 <tr>
 <td> 
 <img width="800px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/Screenshots/register.png">
 </td>
+</tr>
+</table>
+<table>
+<tr>
+<th> - Login </th>
+</tr>
+<tr>
 <td>
 <img width="800px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/Screenshots/login.png">
 </td>
 </tr>
 </table>
-
-- Add details to the profile.
+<table>
+<tr>
+<th> - Update Profile </th>
+</tr>
+<tr>
+<td>
   <img width="800px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/Screenshots/profile.png">
-
-- Select the desired template from the home page.
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<th> - Select Template </th>
+</tr>
+<tr>
+<td>
   <img width="800px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/Screenshots/home.png">
-
-- Print the resume
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<th> - Print Resume </th>
+</tr>
+<tr>
+<td>
   <img width="800px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/Screenshots/print.png">
+</td>
+</tr>
+</table>
 
 # Template
 
 The resume builder currently provides 3 templates.
 
-1. Simple Resume
+<table>
+<tr>
+<th> Simple Resume </th>
+   <th> Highlighted Sections Resume </th>
+</tr>
+<tr>
+<td>
    <img width="350px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/templates/template1.png">
-
-2. Highlighted Sections Resume
+</td>
+   <td>
    <img width="350px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/templates/template2.png">
+</td>
+   
 
-3. Semi-Highlighted Sections Resume
+
+</tr>
+</table>
+
+<table>
+<tr>
+<th> Semi-Highlighted Sections Resume </th>
+</tr>
+<tr>
+<td>
    <img width="350px" height="400px" src="https://github.com/Sapna2001/ResumeBuilder/blob/main/client/src/Resources/templates/template3.png">
+</td>
+</tr>
+</table>
+
