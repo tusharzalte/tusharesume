@@ -48,7 +48,7 @@ Open your web browser and navigate to `http://localhost:3000` to access the tush
 
 # How to use it?
 
-    <table>
+   <table>
     	<tr>
     		<th> - Register </th>
     	</tr>
@@ -103,7 +103,7 @@ Open your web browser and navigate to `http://localhost:3000` to access the tush
 
 The resume builder currently provides 3 templates.
 
-    					<table>
+   <table>
     						<tr>
     							<th> Simple Resume </th>
     							<th> Highlighted Sections Resume </th>
