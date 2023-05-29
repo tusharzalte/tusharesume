@@ -1,4 +1,5 @@
 const express = require("express");
+const puppeteer = require('puppeteer');
 const User = require("../models/userModel");
 const session = require("express-session");
 const randomstring = require("randomstring");
@@ -32,6 +33,16 @@ app.get("/captcha", (req, res) => {
   req.session.captcha = captcha;
   res.send(captcha);
 });
+
+app.get('/screenshot', async (req, res) => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  const response = await page.goto(`https://www.linkedin.com/in/${req.query.username}`);
+
+  res.end(await response.text());
+
+  await browser.close();
+})
 
 
 // Create endpoints
