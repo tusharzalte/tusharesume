@@ -68,6 +68,7 @@ function SkillsEducation() {
   <Form.Item
     {...restField}
     name={[name, "qualification"]}
+    label="Qualification"
     rules={[
       { required: true, message: "Missing qualification" },
     ]}
@@ -109,6 +110,7 @@ function SkillsEducation() {
                     <Form.Item
                       {...restField}
                       name={[name, "percentage"]}
+                      label="Percentage"
                       rules={[
                         { required: true, message: "Missing percentage" },
                       ]}
@@ -121,6 +123,7 @@ function SkillsEducation() {
                     <Form.Item
                       {...restField}
                       name={[name, "institution"]}
+                      label="Institution"
                       rules={[
                         { required: true, message: "Missing institution name" },
                       ]}
@@ -160,6 +163,7 @@ function SkillsEducation() {
                     <Form.Item
                       {...restField}
                       name={[name, "yearRange"]}
+                      label="Year Range"
                       rules={[
                         { required: true, message: "Missing year range" },
                       ]}
@@ -204,6 +208,7 @@ function SkillsEducation() {
                     <Form.Item
                       {...restField}
                       name={[name, "technology"]}
+                      label="Technology"
                       rules={[
                         { required: true, message: "Missing technology" },
                       ]}
