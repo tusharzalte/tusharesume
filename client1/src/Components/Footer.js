@@ -3,10 +3,13 @@ import "../Resources/Stylesheets/footer.css";
 
 const Footer = () => {
   return (
-    <div class="footer">
+    <div className="footer">
       <p>
         Made with ♥️ by{" "}
-        <a href="https://www.linkedin.com/in/tushar-zalte-5aa8121aa/" className="link">
+        <a
+          href="https://www.linkedin.com/in/tushar-zalte-5aa8121aa/"
+          className="link"
+        >
           Tushar07
         </a>
       </p>
