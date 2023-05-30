@@ -19,6 +19,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "company"]}
+                      label="Company"
                       rules={[
                         { required: true, message: "Missing company name" },
                       ]}
@@ -31,6 +32,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "position"]}
+                      label="Position"
                       rules={[
                         { required: true, message: "Missing position" },
                       ]}
@@ -43,6 +45,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "description"]}
+                      label="Description"
                       rules={[
                         { required: true, message: "Missing description" },
                       ]}
@@ -55,6 +58,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "place"]}
+                      label="Place"
                       rules={[
                         { required: true, message: "Missing place name" },
                       ]}
@@ -66,6 +70,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "yearRange"]}
+                      label="Year Range"
                       rules={[
                         { required: true, message: "Missing year range" },
                       ]}
@@ -111,6 +116,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "title"]}
+                      label="Title"
                       rules={[
                         { required: true, message: "Missing title" },
                       ]}
@@ -123,6 +129,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "link"]}
+                      label="Link"
                       rules={[
                         { required: true, message: "Missing project link" },
                       ]}
@@ -135,6 +142,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "description"]}
+                      label="Description"
                       rules={[
                         { required: true, message: "Missing description" },
                       ]}
@@ -146,6 +154,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "yearRange"]}
+                      label="Year Range"
                       rules={[
                         { required: true, message: "Missing year range" },
                       ]}
@@ -192,6 +201,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "title"]}
+                      label="Title"
                       rules={[
                         { required: true, message: "Missing title" },
                       ]}
@@ -204,6 +214,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "description"]}
+                      label="Description"
                       rules={[
                         { required: true, message: "Missing description" },
                       ]}
@@ -216,6 +227,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "yearRange"]}
+                      label="Year Range"
                       rules={[
                         { required: true, message: "Missing year range" },
                       ]}
