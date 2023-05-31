@@ -1,5 +1,43 @@
-.updateProfile h4, label, h5, .ant-tabs-tab {
-    color: #000c40 !important;
+.updateProfile h4,
+label,
+h5,
+.ant-tabs-tab {
+  color: #000c40 !important;
+}
+
+.updateButton {
+  background-color: #000c40 !important;
+  color: white !important;
+}
+
+/*  start here */
+.updateButton:hover {
+  background-color: #424c79 !important;
+  color: white !important;
+  border-radius: 15px;
+  border: 2px solid #000c40 !important;
+  font-weight: bold;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.updateButton {
+  border: none;
+  animation: pulse-animation 2s infinite;
+}
+
+.updateButton:hover {
+  animation: none;
 }
 
 .primaryBtn {
