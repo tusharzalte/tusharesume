@@ -28,7 +28,10 @@ function Home() {
       <div className="row home">
         {templates.map((template, index) => {
           return (
-            <div className="col-md-4" key={index}>
+            <div
+              className="col-md-4"
+              key={`template-${index}`}
+            >
               <div className="template">
                 <img
                   src={template.image}
