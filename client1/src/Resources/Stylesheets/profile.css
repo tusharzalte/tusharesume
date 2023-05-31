@@ -40,4 +40,28 @@ h5,
   animation: none;
 }
 
+.primaryBtn {
+    background-color: #000c40 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 2px;
+    box-shadow: none !important;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+.updateButton {
+    padding: 10px 25px;
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    height: 40px;
+  }
+  
+  
+.primaryBtn:hover {
+    background: rgb(0,3,255);
+    background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+}
+  

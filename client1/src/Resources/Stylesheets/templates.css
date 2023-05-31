@@ -1,12 +1,19 @@
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.home .col-md-4 {
+  width: max-content;
+}
+
 .home .template {
   margin: 20px;
   box-shadow: #000c40;
   padding: 20px;
   position: relative;
-}
-
-.template {
-  width: 350px;
+  width: 100%;
 }
 
 .home .template .text {
@@ -44,17 +51,36 @@
   padding: 0 20px;
 }
 
-.printButton,
-.backButton {
+.printbutton,
+.backbutton {
+  background: transparent;
   background-color: #000c40 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+  color: white !important;
+  border-radius: 2px;
+  padding: 10px 25px;
+
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+
+  outline: none;
 }
 
-.printButton:hover,
-.backButton:hover {
-  background-color: white !important;
-  color: #000c40 !important;
-  border: 2px solid #000c40 !important;
-  font-weight: bold;
+.printbutton:hover,
+.backbutton:hover {
+  background: rgb(0, 3, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 3, 255, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  );
 }
 
 .highlightedHeading {
