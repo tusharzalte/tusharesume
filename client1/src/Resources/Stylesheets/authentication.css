@@ -48,8 +48,32 @@
   background-color: #000c40 !important;
 }
 
-@media only screen and (max-width: 1000px) {
-  .brand {
-    display: none;
+/* Start here */
+.button:hover {
+  background-color: #e5eafa !important;
+  color: black !important;
+  border-radius: 15px;
+  border: 1px solid #000c40 !important;
+  font-weight: bold;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
   }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button {
+  border: none;
+  animation: pulse-animation 2s infinite;
+}
+
+.button:hover {
+  animation: none;
 }
