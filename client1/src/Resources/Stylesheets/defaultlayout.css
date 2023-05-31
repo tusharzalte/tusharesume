@@ -36,3 +36,34 @@
   align-items: center;
   font-size: 1.2 rem;
 }
+
+/* start here */
+
+.iconButton:hover {
+  background-color: rgba(0, 0, 0, 0.908) !important;
+  color: white !important;
+  border-radius: 15px;
+  border: 1px solid white !important;
+  font-weight: bold;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.iconButton {
+  border: none;
+  /* animation: pulse-animation 2s infinite; */
+}
+
+.iconButton:hover {
+  animation: none;
+}
