@@ -143,6 +143,6 @@ The resume builder currently provides 3 templates.
 
 <center>
 <a href="https://github.com/kunjgit/GameZone/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=0xabdulkhalid/tusharesume" />
+  <img src="https://contrib.rocks/image?repo=tusharzalte/tusharesume" />
 </a>
 </center>
