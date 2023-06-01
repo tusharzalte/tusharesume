@@ -127,3 +127,22 @@ The resume builder currently provides 3 templates.
     										</td>
     									</tr>
     								</table>
+                           
+<br>                         
+                           
+ <!-- a big thanks to all the contributors -->
+<div align="center">
+<h1><font size="6"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="40" height="40" /> Contributors </font></h1>
+</div>
+<br>
+
+- This project thanking all the contributors for having your valuable contribution to our project
+- Make sure you show some love by giving ⭐ to our repository
+
+<br>
+
+<center>
+<a href="https://github.com/kunjgit/GameZone/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=0xabdulkhalid/tusharesume" />
+</a>
+</center>
