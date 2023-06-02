@@ -19,6 +19,7 @@ function Register() {
       await axios.post("api/user/register", { ...values, captchaInput });
       setLoading(false);
       message.success("Registration successfull");
+      navigate('/');
     } catch (error) {
       setLoading(false);
       message.error("Registration failed");
