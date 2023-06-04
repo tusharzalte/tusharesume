@@ -21,6 +21,7 @@ function Register() {
     } catch (error) {
       setLoading(false);
       message.error("Login failed");
+      captchahandler();
     }
   };
   const captchahandler = async()=>{
