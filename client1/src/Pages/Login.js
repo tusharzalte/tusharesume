@@ -35,9 +35,7 @@ export default function Login() {
   useEffect(() => {
     const fetchCaptcha = async () => {
       try {
-        console.log("Fetching CAPTCHA...");
         const response = await axios.get("/api/user/captcha");
-        console.log("CAPTCHA response:", response.data);
         setCaptchaValue(response.data);
       } catch (error) {
         console.error("Failed to fetch CAPTCHA", error);
@@ -65,10 +63,16 @@ export default function Login() {
         >
           <h1>Login</h1>
           <hr />
-          <Form.Item name="username" label="Username">
+          <Form.Item
+            name="username"
+            label="Username"
+          >
             <Input />
           </Form.Item>
-          <Form.Item name="password" label="Password">
+          <Form.Item
+            name="password"
+            label="Password"
+          >
             <Input type="password" />
           </Form.Item>
           <Form.Item label="CAPTCHA(Enter the below code to verify)">
