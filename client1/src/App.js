@@ -2,11 +2,14 @@ import "antd/dist/antd.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import SkillAssesment from "./Pages/SkillAssesment"
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
 import Templates from "./Pages/templates";
+import React, { useState } from 'react';
 
 function App() {
+ 
   return (
     <div className="App">
       <BrowserRouter>
@@ -45,9 +48,18 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route
+            path="/assessSkills"
+            element={
+              <ProtectedRoute>
+                < SkillAssesment/>
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
-    </div>
+    
+      </div>
   );
 }
 

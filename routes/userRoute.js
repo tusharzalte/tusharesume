@@ -1,12 +1,15 @@
 const express = require("express");
 const puppeteer = require('puppeteer');
 const User = require("../models/userModel");
+const Skill = require('../models/skillSchema');
 const session = require("express-session");
 const randomstring = require("randomstring");
 const bcypt = require('bcrypt');
 const cors = require("cors");
-const app = express.Router();
+const app = express();
 const saltRounds = 10;
+
+const bodyParser = require('body-parser');
 
 const secretKey = randomstring.generate({
   length: 32, // You can adjust the length of the secret key as needed
@@ -110,14 +113,21 @@ app.post("/register", async (request, response) => {
 });
 
 
-app.post("/update", async (request, response) => {
-  try {
-    await User.findOneAndUpdate({ _id: request.body._id }, request.body);
-    const user = await User.findOne({ _id: request.body._id });
-    response.send(user);
-  } catch (error) {
-    response.status(400).json(error);
-  }
+app.get("/assessSkills", async (req, res) => {
+  Skill.find()
+    .then((skills) => res.json(skills))
+    .catch((err) => res.status(400).json('Error: ' + err));
+});
+// Add a new skill
+app.post("/add", async (req, res) => {
+  const name = req.body.name;
+  const level = Number(req.body.level);
+
+  const newSkill = new Skill({ name, level });
+
+  newSkill
+    .save()
+    .then(() => res.json('Skill added!'))
+    .catch((err) => res.status(400).json('Error: ' + err));
 });
 
-module.exports = app;

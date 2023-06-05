@@ -15,6 +15,9 @@ function DefaultLayout(props) {
       <Menu.Item>
         <Link to="/profile">Profile</Link>
       </Menu.Item>
+      <Menu.Item>
+        <Link to="/assessSkills">Take Skill Assesment</Link>
+      </Menu.Item>
       <Menu.Item
         // To logout
         onClick={() => {

@@ -1,0 +1,52 @@
+.form-control{
+    width:600px;
+    padding:12px;
+}
+.myskills{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.btn{
+    margin:12px;
+    width:200px;
+    height:50px;
+    border-radius:5px;
+    border:1px solid black;
+    background-color:rgba(0,0,0,0.908);
+    color:white;
+    font-weight:bold;
+    font-size:1.2rem;
+    margin: 50px 0px 20px 0px;
+   
+}
+.myHeading{
+    margin:32px;
+}
+.table{
+    width:600px;
+}
+.heading2{
+    margin: 50px 0px 20px 0px;
+
+
+}
+.testSkill{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: auto;
+
+}
+.mybuttons{
+    margin:40px ;
+
+    width:254px;
+}
+.mybuttons:hover{
+    background-color:rgba(0,0,0,0.908);
+    color:white;
+}
