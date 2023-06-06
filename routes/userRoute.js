@@ -90,7 +90,7 @@ app.post("/register", async (request, response) => {
       });
 
       if (result) {
-        response.status(400).json("Registration failed");
+        response.status(400).json("User already exists");
       } else {
         if (request.body.password === request.body.confirmPassword) {
           const genSalt = await bcypt.genSalt(saltRounds);
@@ -99,7 +99,7 @@ app.post("/register", async (request, response) => {
           const newUser = new User(request.body);
           await newUser.save();
 
-          response.send("Registration Successful");
+          response.send(newUser);
         } else {
           response.status(400).json("Passwords do not match");
         }

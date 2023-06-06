@@ -1,5 +1,25 @@
+<div align="center">
+   
 # Resume Builder
 
+ <p>
+
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
+![GitHub forks](https://img.shields.io/github/forks/tusharzalte/tusharesume?style=flat&logo=github)
+![GitHub Repo stars](https://img.shields.io/github/stars/tusharzalte/tusharesume?style=flat&logo=github)
+![GitHub contributors](https://img.shields.io/github/contributors/tusharzalte/tusharesume)
+![GitHub last commit](https://img.shields.io/github/last-commit/tusharzalte/tusharesume)
+![GitHub repo size](https://img.shields.io/github/repo-size/tusharzalte/tusharesume)
+![Github](https://img.shields.io/github/license/tusharzalte/tusharesume)
+![GitHub issues](https://img.shields.io/github/issues/tusharzalte/tusharesume)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/tusharzalte/tusharesume)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/tusharzalte/tusharesume)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/tusharzalte/tusharesume)
+ </p>
+ </div>
+ <br>
+<div id="top">
 A resume is a formal document that a job applicant creates to itemize their qualifications for a position. It details our skills and training, work experience, and education, and, most importantly, the accomplishments we have made with past employers. It should also communicate in a concise manner the benefits you will bring to the job if hired.
 
 Employers use resumes to make recruiting choices, and it can also help us secure interview after submitting a job application. Owing to this one must ensure that the resume is clean and has relevant content.
@@ -146,3 +166,5 @@ The resume builder currently provides 3 templates.
   <img src="https://contrib.rocks/image?repo=tusharzalte/tusharesume" />
 </a>
 </center>
+      <p align="right"><a href="#top">Back to top</a></p>
+      </div>
