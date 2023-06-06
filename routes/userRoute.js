@@ -111,8 +111,15 @@ app.post("/register", async (request, response) => {
     response.status(400).json("Invalid CAPTCHA");
   }
 });
-
-
+app.post("/update", async (request, response) => {
+  try {
+    await User.findOneAndUpdate({ _id: request.body._id }, request.body);
+    const user = await User.findOne({ _id: request.body._id });
+    response.send(user);
+  } catch (error) {
+    response.status(400).json(error);
+  }
+});
 app.get("/assessSkills", async (req, res) => {
   Skill.find()
     .then((skills) => res.json(skills))
@@ -131,3 +138,4 @@ app.post("/add", async (req, res) => {
     .catch((err) => res.status(400).json('Error: ' + err));
 });
 
+module.exports = app;
