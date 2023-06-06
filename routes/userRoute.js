@@ -6,7 +6,7 @@ const session = require("express-session");
 const randomstring = require("randomstring");
 const bcypt = require('bcrypt');
 const cors = require("cors");
-const app = express();
+const app = express.Router();
 const saltRounds = 10;
 
 const bodyParser = require('body-parser');
