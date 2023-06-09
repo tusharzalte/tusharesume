@@ -73,7 +73,7 @@ function Profile() {
           <Col span="auto">
             <h4>
               <Button className="primaryBtn" onClick={() => setLinkedInPromptShown(true)}>
-                FILLED WITH LINKEDIN
+                FILL USING LINKEDIN
               </Button>
             </h4>
           </Col>

@@ -16,14 +16,19 @@ function Register() {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      await axios.post("api/user/register", { ...values, captchaInput });
+      const user = await axios.post("api/user/register", {
+        ...values,
+        captchaInput,
+      });
+      message.success("Registration successful");
+      localStorage.setItem("tusharresume-users", JSON.stringify(user.data));
       setLoading(false);
-      message.success("Registration successfull");
+      navigate("/home");
     } catch (error) {
       setLoading(false);
       message.error("Registration failed");
-    } finally {
       form.resetFields();
+      captchahandler();
     }
   };
   const captchahandler = async () => {
@@ -34,9 +39,7 @@ function Register() {
   useEffect(() => {
     const fetchCaptcha = async () => {
       try {
-        console.log("Fetching CAPTCHA...");
         const response = await axios.get("/api/user/captcha");
-        console.log("CAPTCHA response:", response.data);
         setCaptchaValue(response.data);
       } catch (error) {
         console.error("Failed to fetch CAPTCHA", error);

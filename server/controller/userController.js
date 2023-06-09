@@ -67,7 +67,7 @@ const userRegister = async (request, response) => {
                     const newUser = new User(request.body);
                     await newUser.save();
 
-                    response.send("Registration Successful");
+                    response.send(newUser);
                 } else {
                     response.status(400).json("Passwords do not match");
                 }

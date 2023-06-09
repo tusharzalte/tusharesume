@@ -3,17 +3,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f2f0; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #000c40,
-    #f0f2f0
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #000c40,
-    #f0f2f0
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #f0f2f0;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom,
+      #000c40,
+      #f0f2f0);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom,
+      #000c40,
+      #f0f2f0);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   position: absolute;
   width: 100%;
@@ -35,9 +34,9 @@
 }
 
 .brand {
-  font-size: 130px !important;
+  font-size: 100px !important;
   position: absolute;
-  top: 5%;
+  top: 3%;
   width: 100%;
   left: 0;
   text-align: center;
@@ -45,7 +44,7 @@
 }
 
 .button {
-  
+
   background: transparent;
   background-color: #000c40 !important;
   box-shadow: none !important;
@@ -54,7 +53,7 @@
   color: white !important;
   border-radius: 2px;
   padding: 10px 25px;
- 
+
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -68,12 +67,38 @@
 
 
 .button:hover {
-   background: rgb(0,3,255);
-background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+  background: rgb(0, 3, 255);
+  background: linear-gradient(0deg, rgba(0, 3, 255, 1) 0%, rgba(2, 126, 251, 1) 100%);
 }
 
-@media only screen and (max-width: 1000px) {
-  .brand {
-    display: none;
+/* Start here */
+.button:hover {
+  background-color: #e5eafa !important;
+  color: black !important;
+  border-radius: 15px;
+  border: 1px solid #000c40 !important;
+  font-weight: bold;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
   }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button {
+  border: none;
+  animation: pulse-animation 2s infinite;
+}
+
+.button:hover {
+  animation: none;
 }

@@ -52,6 +52,7 @@ textarea:focus {
   transform: translate(-50%, -50%);
   z-index: 10;
 }
+
 .ant-btn-dashed {
   background: white !important;
   color: black !important;
@@ -69,4 +70,12 @@ textarea:focus {
   background-color: white !important;
   color: black !important;
   border: 1px solid black !important;
+}
+
+.button:hover {
+  background-color: #9cc4d1 !important;
+  border-radius: 15px;
+  color: #000c40 !important;
+  border: 2px solid #000c40 !important;
+  font-weight: bold;
 }
