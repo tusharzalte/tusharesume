@@ -42,7 +42,7 @@
   },
   "proxy": {
     "/auth/google": {
-      "target": "localhost:3000"
+      "target": "localhost:5000"
     }
   }
 }

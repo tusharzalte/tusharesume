@@ -8,18 +8,21 @@ const cors = require("cors");
 const app = express.Router();
 const saltRounds = 10;
 
-const secretKey = randomstring.generate({
-  length: 32, // You can adjust the length of the secret key as needed
-  charset: "alphanumeric",
-});
-app.use(cors());
-app.use(
-  session({
-    secret: secretKey,
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+
+
+// Not using session anymore since session is not storing the captcha(Showing errors)
+// const secretKey = randomstring.generate({
+//   length: 32, // You can adjust the length of the secret key as needed
+//   charset: "alphanumeric",
+// });
+// app.use(cors());
+// app.use(
+//   session({
+//     secret: secretKey,
+//     resave: false,
+//     saveUninitialized: true,
+//   })
+// );
 
 function generateCaptcha() {
   return randomstring.generate({
@@ -28,10 +31,10 @@ function generateCaptcha() {
   });
 }
 
-
+let storedCaptcha = ''
 app.get("/captcha", (req, res) => {
   const captcha = generateCaptcha();
-  req.session.captcha = captcha;
+  storedCaptcha = captcha
   res.send(captcha);
 });
 
@@ -49,7 +52,6 @@ app.get('/screenshot', async (req, res) => {
 // Create endpoints
 app.post("/login", async (request, response) => {
   const userInput = request.body.captchaInput;
-  const storedCaptcha = request.session.captcha;
 
   if (userInput === storedCaptcha) {
     try {
@@ -78,7 +80,6 @@ app.post("/login", async (request, response) => {
 
 app.post("/register", async (request, response) => {
   const userInput = request.body.captchaInput;
-  const storedCaptcha = request.session.captcha;
 
   if (userInput === storedCaptcha) {
     try {
