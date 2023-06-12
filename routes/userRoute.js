@@ -7,6 +7,7 @@ const bcypt = require('bcrypt');
 const cors = require("cors");
 const app = express.Router();
 const saltRounds = 10;
+const { tokenSign, tokenVerify } = require('../jwt');
 
 
 
@@ -62,7 +63,8 @@ app.post("/login", async (request, response) => {
       if (result) {
         const passwordDecode = await bcypt.compare(request.body.password, result.password);
         if (passwordDecode) {
-          response.send(result);
+          const token = await tokenSign(result)
+          response.send(token).status(201);
         } else {
           response.status(400).json("Login failed");
         }
@@ -111,10 +113,10 @@ app.post("/register", async (request, response) => {
 });
 
 
-app.post("/update", async (request, response) => {
+app.post("/update", tokenVerify, async (request, response) => {
   try {
-    await User.findOneAndUpdate({ _id: request.body._id }, request.body);
-    const user = await User.findOne({ _id: request.body._id });
+    const userId = req.user._id;
+    const user = await User.findOneAndUpdate({ _id: userId }, request.body, { new: true });
     response.send(user);
   } catch (error) {
     response.status(400).json(error);
