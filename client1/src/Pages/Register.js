@@ -3,6 +3,7 @@ import { Form, Input, Button, message, Spin } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../Components/Footer";
+import {AiFillEyeInvisible,AiFillEye} from 'react-icons/ai';
 
 import "../Resources/Stylesheets/authentication.css";
 
@@ -12,6 +13,8 @@ function Register() {
   const [captchaValue, setCaptchaValue] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const onFinish = async (values) => {
     setLoading(true);
@@ -76,14 +79,18 @@ function Register() {
             name="password"
             label="Password"
           >
-            <Input type="password" />
+            {!showPassword?<Input type="password" />:<Input type="text" />}
+            {!showPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
+            <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
           </Form.Item>
 
           <Form.Item
             name="confirmPassword"
             label="Confirm Password"
           >
-            <Input type="password" />
+            {!showConfirmPassword?<Input type="password" />:<Input type="text" />}
+            {!showConfirmPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowConfirmPassword(!showConfirmPassword)} size={18}/>:
+            <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowConfirmPassword(!showConfirmPassword)}  size={18}/>}
           </Form.Item>
 
           <Form.Item label="CAPTCHA (Enter the below code to verify)">
