@@ -3,6 +3,7 @@ import DefaultLayout from "../Components/DefaultLayout";
 import template1Img from "../Resources/templates/template1.png";
 import template2Img from "../Resources/templates/template2.png";
 import template3Img from "../Resources/templates/template3.png";
+import template4Img from "../Resources/templates/template4.png";
 
 import "../Resources/Stylesheets/templates.css";
 import { useNavigate } from "react-router-dom";
@@ -21,6 +22,10 @@ function Home() {
     {
       title: "Semi-Highlighted Sections Resume",
       image: template3Img,
+    },
+    {
+      title: "Harsh resume",
+      image: template4Img,
     },
   ];
   return (

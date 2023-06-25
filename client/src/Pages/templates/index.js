@@ -5,6 +5,7 @@ import DefaultLayout from "../../Components/DefaultLayout";
 import Template1 from "./Template1";
 import Template2 from "./Template2";
 import Template3 from "./Template3";
+import Template4 from "./Template4";
 import { Button } from "antd";
 import "../../Resources/Stylesheets/templates.css";
 
@@ -25,6 +26,9 @@ function Templates() {
       }
       case "3": {
         return <Template3 />;
+      }
+      case "4": {
+        return <Template4 />;
       }
       default: {
         return <Template1 />;
