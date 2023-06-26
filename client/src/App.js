@@ -8,6 +8,7 @@ const Register = lazy(() => import("./Pages/Register"));
 const Home = lazy(() => import("./Pages/Home"));
 const Profile = lazy(() => import("./Pages/Profile"));
 const Templates = lazy(() => import("./Pages/templates"));
+const ErrorPage = lazy(() => import("./Pages/404Page"));
 
 function App() {
   return (
@@ -54,6 +55,10 @@ function App() {
             <Route
               path="/register"
               element={<Register />}
+            />
+            <Route
+              path="/*"
+              element={<ErrorPage/>}
             />
           </Routes>
         </Suspense>
