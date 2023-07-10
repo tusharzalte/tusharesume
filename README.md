@@ -70,7 +70,7 @@ Open your web browser and navigate to `http://localhost:3000` to access the tush
 
    <table>
     	<tr>
-    		<th> - Register </th>
+    		<th> - Register - </th>
     	</tr>
     	<tr>
     		<td>
@@ -80,7 +80,7 @@ Open your web browser and navigate to `http://localhost:3000` to access the tush
     	</table>
     	<table>
     		<tr>
-    			<th> - Login </th>
+    			<th> - Login - </th>
     		</tr>
     		<tr>
     			<td>
@@ -90,7 +90,7 @@ Open your web browser and navigate to `http://localhost:3000` to access the tush
     		</table>
     		<table>
     			<tr>
-    				<th> - Update Profile </th>
+    				<th> - Update Profile - </th>
     			</tr>
     			<tr>
     				<td>
@@ -100,7 +100,7 @@ Open your web browser and navigate to `http://localhost:3000` to access the tush
     			</table>
     			<table>
     				<tr>
-    					<th> - Select Template </th>
+    					<th> - Select Template - </th>
     				</tr>
     				<tr>
     					<td>
