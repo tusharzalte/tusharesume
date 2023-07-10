@@ -3,6 +3,7 @@ import { Form, Input, Button, message, Spin } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../Components/Footer";
+import validate from "../common/validation";
 import {AiFillEyeInvisible,AiFillEye} from 'react-icons/ai';
 
 import "../Resources/Stylesheets/authentication.css";
@@ -12,12 +13,22 @@ function Register() {
   const [loading, setLoading] = useState(false);
   const [captchaValue, setCaptchaValue] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
+  const [error, setError] = useState({username: true, password: true, confirmPassword: true})
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const onFinish = async (values) => {
     setLoading(true);
+    let submitable = true;
+    Object.values(error).forEach((err)=>{
+      if(err !== false){
+        submitable = false;
+        return;
+      }
+    })
+
+    if(submitable && captchaInput !== ""){
     try {
       const user = await axios.post("api/user/register", {
         ...values,
@@ -33,6 +44,10 @@ function Register() {
       form.resetFields();
       captchahandler();
     }
+  }else{
+    message.error("Please Enter all fields with valid data.");
+    setLoading(false)
+  }
   };
   const captchahandler = async () => {
     const response = await axios.get("/api/user/captcha");
@@ -57,6 +72,15 @@ function Register() {
     }
   });
 
+  const handleChange = (e)=>{
+    let errorMessage = validate[e.target.name](e.target.value);
+    if(e.target.name === "confirmPassword"){
+       errorMessage = validate.confirmPassword(e.target.value, form.getFieldValue("password"))
+    }
+    setError((prev)=>{
+      return {...prev, ...errorMessage}
+    })
+  }
   return (
     <>
       <div className="authenticationParent">
@@ -73,24 +97,27 @@ function Register() {
             name="username"
             label="Username"
           >
-            <Input />
+            <Input name="username" onChange={handleChange}/>
+            {error.username && error.usernameError && <p style={{color: "red", fontSize: "14px"}}>{error.usernameError}</p>}
           </Form.Item>
           <Form.Item
             name="password"
             label="Password"
           >
-            {!showPassword?<Input type="password" />:<Input type="text" />}
+            {!showPassword?<Input type="password" name="password" onChange={handleChange} />:<Input type="text" />}
             {!showPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
             <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
+            {error.password && error.passwordError && <p style={{color: "red", fontSize: "14px"}}>{error.passwordError}</p>}
           </Form.Item>
 
           <Form.Item
             name="confirmPassword"
             label="Confirm Password"
           >
-            {!showConfirmPassword?<Input type="password" />:<Input type="text" />}
+            {!showConfirmPassword?<Input type="password" name="confirmPassword" onChange={handleChange}/>:<Input type="text" />}
             {!showConfirmPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowConfirmPassword(!showConfirmPassword)} size={18}/>:
             <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowConfirmPassword(!showConfirmPassword)}  size={18}/>}
+            {error.confirmPassword && error.confirmPasswordError && <p style={{color: "red", fontSize: "14px"}}>{error.confirmPasswordError}</p>}
           </Form.Item>
 
           <Form.Item label="CAPTCHA (Enter the below code to verify)">
