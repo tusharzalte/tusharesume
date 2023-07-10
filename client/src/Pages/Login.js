@@ -4,12 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Resources/Stylesheets/authentication.css";
 import Footer from "../Components/Footer";
 import axios from "axios";
+import {AiFillEyeInvisible,AiFillEye} from 'react-icons/ai';
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [captchaValue, setCaptchaValue] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
   const onFinish = async (values) => {
     setLoading(true);
     try {
@@ -71,9 +74,11 @@ export default function Login() {
           </Form.Item>
           <Form.Item
             name="password"
-            label="Password"
+            label="Password" className="password"
           >
-            <Input type="password" />
+            {!showPassword?<Input type="password" />:<Input type="text" />}
+            {!showPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
+            <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
           </Form.Item>
           <Form.Item label="CAPTCHA(Enter the below code to verify)">
             <div className="captcha-container">
