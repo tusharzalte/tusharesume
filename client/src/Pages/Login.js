@@ -99,9 +99,10 @@ export default function Login() {
             name="password"
             label="Password" className="password"
           >
-            {!showPassword?<Input type="password" />:<Input type="text" />}
+            {!showPassword?<Input type="password" name="password" onChange={handleChange}/>:<Input type="text" />}
             {!showPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
             <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
+            {error.password && error.passwordError && <p style={{color: "red", fontSize: "14px"}}>{error.passwordError}</p>}
           </Form.Item>
           <Form.Item label="CAPTCHA(Enter the below code to verify)">
             <div className="captcha-container">

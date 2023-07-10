@@ -104,18 +104,20 @@ function Register() {
             name="password"
             label="Password"
           >
-            {!showPassword?<Input type="password" />:<Input type="text" />}
+            {!showPassword?<Input type="password" name="password" onChange={handleChange} />:<Input type="text" />}
             {!showPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
             <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
+            {error.password && error.passwordError && <p style={{color: "red", fontSize: "14px"}}>{error.passwordError}</p>}
           </Form.Item>
 
           <Form.Item
             name="confirmPassword"
             label="Confirm Password"
           >
-            {!showConfirmPassword?<Input type="password" />:<Input type="text" />}
+            {!showConfirmPassword?<Input type="password" name="confirmPassword" onChange={handleChange}/>:<Input type="text" />}
             {!showConfirmPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowConfirmPassword(!showConfirmPassword)} size={18}/>:
             <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowConfirmPassword(!showConfirmPassword)}  size={18}/>}
+            {error.confirmPassword && error.confirmPasswordError && <p style={{color: "red", fontSize: "14px"}}>{error.confirmPasswordError}</p>}
           </Form.Item>
 
           <Form.Item label="CAPTCHA (Enter the below code to verify)">
