@@ -1,4 +1,4 @@
-<div align="center">
+![image](https://github.com/ZapeeoSheikh/tusharesume/assets/77886136/26c36e2b-8d9e-4880-9b12-ebbad1432d64)<div align="center">
    
 # Resume Builder
 
@@ -148,7 +148,27 @@ The resume builder currently provides 3 templates.
     									</tr>
     								</table>
                            
-<br>                         
+<br>    
+
+<h2 align='center'> Project maintainers </h2>
+<table align='center'>
+<tr>
+ <td align="center">
+        <a href="https://github.com/ZapeeoSheikh">
+            <img src="https://avatars.githubusercontent.com/u/77886136?v=4" width="100;" alt="ZapeeoSheikh"/>
+            <br />
+            <sub><b>Muhammad Rameez</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/tusharesume">
+            <img src="https://avatars.githubusercontent.com/u/90615665?v=4" width="100;" alt="Tushar Zalte"/>
+            <br />
+            <sub><b>Tushar Zalte</b></sub>
+        </a>
+    </td>
+  </tr>
+</table>
                            
  <!-- a big thanks to all the contributors -->
 <div align="center">
