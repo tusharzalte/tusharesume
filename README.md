@@ -110,7 +110,7 @@ Open your web browser and navigate to `http://localhost:3000` to access the tush
     				</table>
     				<table>
     					<tr>
-    						<th> - Print Resume </th>
+    						<th> - Print Resume - </th>
     					</tr>
     					<tr>
     						<td>
