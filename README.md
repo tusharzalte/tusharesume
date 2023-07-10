@@ -27,7 +27,7 @@ Employers use resumes to make recruiting choices, and it can also help us secure
 Resume builder is a application used to create
 <b> ATS(Applicant Tracking System) </b> friendly resumes. This app helps to create resumes which has all the relevant information needed to get hired.
 
-https://user-images.githubusercontent.com/56690856/183486623-fa7e7b0f-a094-4716-b2d0-87c4b803cedb.mp4
+<!-- https://user-images.githubusercontent.com/56690856/183486623-fa7e7b0f-a094-4716-b2d0-87c4b803cedb.mp4 -->
 
 # Tech Stacks
 

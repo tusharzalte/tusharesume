@@ -5,6 +5,7 @@ import "../Resources/Stylesheets/authentication.css";
 import Footer from "../Components/Footer";
 import axios from "axios";
 import validate from "../common/validation";
+import {AiFillEyeInvisible,AiFillEye} from 'react-icons/ai';
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -12,6 +13,8 @@ export default function Login() {
   const [captchaInput, setCaptchaInput] = useState("");
   const [error, setError] = useState({username: true, password: true})
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
   const onFinish = async (values) => {
     setLoading(true);
     let submitable = true;
@@ -94,10 +97,11 @@ export default function Login() {
           </Form.Item>
           <Form.Item
             name="password"
-            label="Password"
+            label="Password" className="password"
           >
-            <Input type="password" name="password" onChange={handleChange}/>
-            {error.password && error.passwordError && <p style={{color: "red", fontSize: "14px"}}>{error.passwordError}</p>}
+            {!showPassword?<Input type="password" />:<Input type="text" />}
+            {!showPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
+            <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
           </Form.Item>
           <Form.Item label="CAPTCHA(Enter the below code to verify)">
             <div className="captcha-container">

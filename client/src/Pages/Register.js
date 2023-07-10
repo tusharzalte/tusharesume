@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../Components/Footer";
 import validate from "../common/validation";
+import {AiFillEyeInvisible,AiFillEye} from 'react-icons/ai';
+
 import "../Resources/Stylesheets/authentication.css";
 
 function Register() {
@@ -13,6 +15,8 @@ function Register() {
   const [captchaInput, setCaptchaInput] = useState("");
   const [error, setError] = useState({username: true, password: true, confirmPassword: true})
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const onFinish = async (values) => {
     setLoading(true);
@@ -100,16 +104,18 @@ function Register() {
             name="password"
             label="Password"
           >
-            <Input type="password" name="password" onChange={handleChange} />
-            {error.password && error.passwordError && <p style={{color: "red", fontSize: "14px"}}>{error.passwordError}</p>}
+            {!showPassword?<Input type="password" />:<Input type="text" />}
+            {!showPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
+            <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
           </Form.Item>
 
           <Form.Item
             name="confirmPassword"
             label="Confirm Password"
           >
-            <Input type="password" name="confirmPassword" onChange={handleChange} />
-            {error.confirmPassword && error.confirmPasswordError && <p style={{color: "red", fontSize: "14px"}}>{error.confirmPasswordError}</p>}
+            {!showConfirmPassword?<Input type="password" />:<Input type="text" />}
+            {!showConfirmPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowConfirmPassword(!showConfirmPassword)} size={18}/>:
+            <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowConfirmPassword(!showConfirmPassword)}  size={18}/>}
           </Form.Item>
 
           <Form.Item label="CAPTCHA (Enter the below code to verify)">
