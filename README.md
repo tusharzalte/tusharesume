@@ -1,4 +1,3 @@
-![image](https://github.com/ZapeeoSheikh/tusharesume/assets/77886136/26c36e2b-8d9e-4880-9b12-ebbad1432d64)<div align="center">
    
 # Resume Builder
 
