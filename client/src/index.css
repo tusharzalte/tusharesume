@@ -79,3 +79,138 @@ textarea:focus {
   border: 2px solid #000c40 !important;
   font-weight: bold;
 }
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+.resume {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.resume-header h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.resume-header p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.resume-contact {
+  margin-bottom: 30px;
+}
+
+.resume-contact p {
+  margin-bottom: 10px;
+}
+
+.resume-contact .contact-label {
+  font-weight: bold;
+}
+
+.resume-section {
+  margin-bottom: 30px;
+}
+
+.resume-section:last-child {
+  margin-bottom: 0;
+}
+
+.resume-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.resume-section .resume-item {
+  margin-bottom: 15px;
+}
+
+.resume-section .resume-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.resume-section .resume-item .resume-subtitle {
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.resume-section .resume-item p {
+  margin-bottom: 5px;
+}
+
+.resume-section .resume-item .resume-description {
+  margin-top: 5px;
+}
+
+.resume-skills {
+  margin-bottom: 30px;
+}
+
+.resume-skills h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.resume-skills .skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -10px;
+}
+
+.resume-skills .skill {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.resume-achievements {
+  margin-bottom: 30px;
+}
+
+.resume-achievements h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.resume-achievements .resume-item {
+  margin-bottom: 15px;
+}
+
+.resume-achievements .resume-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.resume-achievements .resume-item p {
+  margin-bottom: 5px;
+}

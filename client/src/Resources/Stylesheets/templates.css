@@ -119,3 +119,128 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+
+.template3Parent {
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 30px;
+  margin: 0;
+}
+
+.contact-info {
+  margin-top: 10px;
+}
+
+.email,
+.phone,
+.address {
+  margin: 0;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-link {
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.divider {
+  height: 1px;
+  background-color: #333;
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.education-item {
+  margin-bottom: 10px;
+}
+
+.year {
+  font-weight: bold;
+}
+
+.qualification {
+  font-weight: bold;
+  margin: 0;
+}
+
+.institution {
+  margin: 0;
+}
+
+.experience-item {
+  margin-bottom: 20px;
+}
+
+.company {
+  font-size: 18px;
+  margin: 0;
+}
+
+.place {
+  font-weight: bold;
+  margin: 0;
+}
+
+.position {
+  font-weight: bold;
+  margin: 0;
+}
+
+.description {
+  margin-top: 5px;
+}
+
+.project-item {
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill {
+  background-color: #f5f5f5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.achievement-item {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.description {
+  margin-top: 5px;
+}
