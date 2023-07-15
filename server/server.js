@@ -7,6 +7,7 @@ const path = require("path");
 const session = require("express-session");
 const dotenv = require('dotenv');
 const cors = require("cors");
+const commentRoute = require("./routes/commentRoute");
 const secretKey = require('./utils/generateCaptcha')
 
 dotenv.config(process.env.NODE_ENV === "production" ? { path: 'prod.env' } : { path: 'env' });
@@ -21,6 +22,7 @@ app.use(
   })
 );
 app.use("/api/user/", routes);
+app.use("/api/comments",commentRoute);
 
 if (process.env.NODE_ENV === "production") {
   app.use("/", express.static("client/build"));
