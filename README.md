@@ -48,11 +48,11 @@ Resume builder is a application used to create
 3. Install dependencies:
 
    ```shell
-   cd client1
+   cd client
    npm install
    ```
 
-4. In the client1 folder, run command
+4. In the client folder, run command
 
    ```shell
    npm start
