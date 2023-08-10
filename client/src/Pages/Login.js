@@ -4,17 +4,28 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Resources/Stylesheets/authentication.css";
 import Footer from "../Components/Footer";
 import axios from "axios";
+import validate from "../common/validation";
 import {AiFillEyeInvisible,AiFillEye} from 'react-icons/ai';
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [captchaValue, setCaptchaValue] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
+  const [error, setError] = useState({username: true, password: true})
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const onFinish = async (values) => {
     setLoading(true);
+    let submitable = true;
+    Object.values(error).forEach((err)=>{
+      if(err !== false){
+        submitable = false;
+        return;
+      }
+    })
+
+    if(submitable && captchaInput !== ""){
     try {
       const user = await axios.post("api/user/login", {
         ...values,
@@ -29,6 +40,10 @@ export default function Login() {
       message.error("Login failed");
       captchahandler();
     }
+  }else{
+    message.error("Please Enter all fields with valid data.");
+    setLoading(false)
+  }
   };
   const captchahandler = async () => {
     const response = await axios.get("/api/user/captcha");
@@ -54,6 +69,13 @@ export default function Login() {
     }
   });
 
+  const handleChange = (e)=>{
+    const errorMessage = validate[e.target.name](e.target.value);
+    setError((prev)=>{
+      return {...prev, ...errorMessage}
+    })
+  }
+
   return (
     <>
       <div className="authenticationParent">
@@ -70,15 +92,17 @@ export default function Login() {
             name="username"
             label="Username"
           >
-            <Input />
+            <Input name="username" onChange={handleChange}/>
+            {error.username && error.usernameError && <p style={{color: "red", fontSize: "14px"}}>{error.usernameError}</p>}
           </Form.Item>
           <Form.Item
             name="password"
             label="Password" className="password"
           >
-            {!showPassword?<Input type="password" />:<Input type="text" />}
+            {!showPassword?<Input type="password" name="password" onChange={handleChange}/>:<Input type="text" />}
             {!showPassword?<AiFillEye className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
             <AiFillEyeInvisible className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
+            {error.password && error.passwordError && <p style={{color: "red", fontSize: "14px"}}>{error.passwordError}</p>}
           </Form.Item>
           <Form.Item label="CAPTCHA(Enter the below code to verify)">
             <div className="captcha-container">
